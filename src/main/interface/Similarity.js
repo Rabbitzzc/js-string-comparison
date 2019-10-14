@@ -25,4 +25,14 @@ module.exports = class Similarity {
      * @description 寻找最差匹配结果
      */
     findWorstMatch(thanos, avengers) {}
+
+    checkParamType(thanos, avengers) {
+        if (typeof thanos !== 'string') throw new Error('first argument should be a string')
+        if (!Array.isArray(avengers)) throw new Error('second argument should be an array of strings')
+        if (avengers.find(s => typeof s !== 'string')) throw new Error('second argument should be an array of strings')
+    }
+
+    initParams(thanos, rival) {
+        return [thanos.replace(/\s+/g, '').toLowerCase(), rival.replace(/\s+/g, '').toLowerCase()]
+    }
 }

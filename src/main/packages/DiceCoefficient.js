@@ -9,8 +9,7 @@ module.exports = class DiceCoefficient extends Similarity {
     compareTwoStrings(thanos, rival) {
 
         // clear white space characters & to low
-        thanos = thanos.replace(/\s+/g, '').toLowerCase()
-        rival = rival.replace(/\s+/g, '').toLowerCase()
+        [thanos, rival] = super.initParams(thanos, rival)
 
         let [length1, length2] = [thanos.length, rival.length]
 
@@ -42,5 +41,13 @@ module.exports = class DiceCoefficient extends Similarity {
         return (2.0 * intersectionSize) / (length1 + length2 - 2)
     }
 
-    findBestMatch(thanos, avengers) {}
+    findBestMatch(thanos, avengers) {
+        try {
+            super.checkParamType(thanos, avengers)
+
+
+        } catch (error) {
+            console.log(error)
+        }
+    }
 }
