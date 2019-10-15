@@ -26,7 +26,6 @@ module.exports = class Cosine extends Similarity {
             mThanos += (vectorThanos[i] * vectorThanos[i])
             mRival += (vectorRival[i] * vectorRival[i])
         }
-        // console.log(dotproduct, mThanos, mRival)
         mThanos = Math.sqrt(mThanos)
         mRival = Math.sqrt(mRival)
         return (1.0 * dotproduct) / (mThanos * mRival)
@@ -46,9 +45,5 @@ module.exports = class Cosine extends Similarity {
     // string vectorization
     static stringVectorization(strArr, common) {
         return common.map(v => strArr.includes(v) ? 1 : 0)
-    }
-
-    a() {
-        console.log('aaaaaaaaaa')
     }
 }

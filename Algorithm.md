@@ -26,3 +26,11 @@ $${\displaystyle d={\frac {2n_{t}}{(n_{x}+n_{y})}}}$$
 
 在信息检索中，每个词项被赋予不同的维度，而一个文档由一个向量表示，其各个维度上的值对应于该词项在文档中出现的频率。余弦相似度因此可以给出两篇文档在其主题方面的相似度
 
+### Longest common subsequence
+
+维基百科：[https://en.wikipedia.org/wiki/Longest_common_subsequence_problem](https://en.wikipedia.org/wiki/Longest_common_subsequence_problem)
+
+`Longest common subsequence` 是一个在一个序列集合中（通常为两个序列）用来查找所有序列中最长子序列的问题。最长公共子序列问题是一个经典的计算机科学问题，也是数据比较程序，比如Diff工具，和生物信息学应用的基础。它也被广泛地应用在版本控制，比如Git用来调和文件之间的改变。
+
+公式：
+`S(A,B)=2⋅|LCS(A,B)||A|+|B|`

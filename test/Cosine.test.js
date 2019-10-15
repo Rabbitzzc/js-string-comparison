@@ -7,10 +7,6 @@ describe('test Cosine Similarity', () => {
         let compareTwoStrings = cosine.compareTwoStrings
 
         const testData = [{
-                first: 'apple',
-                second: 'app',
-                expected: 0.7071067811865475
-            }, {
                 first: 'french',
                 second: 'quebec',
                 expected: 0.3651483716701107

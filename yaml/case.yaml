@@ -1,0 +1,52 @@
+testData:
+    -
+        first: 'french'
+        second: 'quebec'
+    -
+        first: 'france'
+        second: 'france'
+    -
+        first: 'fRaNce'
+        second: 'france'
+    -
+        first: 'healed'
+        second: 'sealed'
+    -
+        first: 'web applications'
+        second: 'applications of the web'
+    -
+        first: 'this will have a typo somewhere'
+        second: 'this will huve a typo somewhere'
+    -
+        first: 'Olive-green table for sale, in extremely good condition.'
+        second: 'For sale: table in very good  condition, olive green in colour.'
+    -
+        first: 'Olive-green table for sale, in extremely good condition.'
+        second: 'For sale: green Subaru Impreza, 210,000 miles'
+    -
+        first: 'Olive-green table for sale, in extremely good condition.'
+        second: 'Wanted: mountain bike with at least 21 gears.'
+    -
+        first: 'this has one extra word'
+        second: 'this has one word'
+    -
+        first: 'a'
+        second: 'a'
+    -
+        first: 'a'
+        second: 'b'
+    -
+        first: ''
+        second: ''
+    -
+        first: ''
+        second: 'a'
+    -
+        first: 'apple event'
+        second: 'apple    event'
+    -
+        first: 'iphone'
+        second: 'iphone x'
+    -
+        first: 'ab'
+        second: 'ba'

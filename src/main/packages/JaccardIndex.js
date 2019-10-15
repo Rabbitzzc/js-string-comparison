@@ -10,7 +10,6 @@ module.exports = class JaccardIndex extends Similarity {
         // clear white space characters & to low
         [thanos, rival] = super.initParams(thanos, rival)
 
-        let [length1, length2] = [thanos.length, rival.length]
         if (!thanos.length && !rival.length) return 1
         if (thanos === rival) return 1
 
