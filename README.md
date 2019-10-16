@@ -21,6 +21,13 @@ const Thanos = 'healed'
 const Rival = 'sealed'
 const Avengers = ['edward', 'sealed', 'theatre']
 
+use by Consine
+let cos = stringComparision.consine
+
+console.log(cos.similarity(Thanos, Rival))
+console.log(cos.distance(Thanos, Rival))
+console.log(cos.sortMatch(Thanos, Avengers))
+
 ```
 
 ## OverViews

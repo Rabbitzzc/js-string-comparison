@@ -1,21 +1,34 @@
 {
     "name": "string-comparison",
-    "version": "1.0.0",
-    "description": "字符串相似度比较",
+    "version": "1.0.1",
+    "description": "A library implementing different string similarity",
     "main": "./src/index.js",
     "scripts": {
         "test": "node ./node_modules/mocha/bin/mocha",
-        "lint": "eslint src"
+        "lint": "eslint src",
+        "build": "./node_modules/.bin/babel src  --out-dir lib"
     },
     "repository": {
         "type": "git",
-        "url": ""
+        "url": "https://github.com/Rabbitzzc/js-string-comparision"
     },
     "keywords": [
         "strings",
-        "compareSimilarity",
+        "compare similarity",
         "similarity",
-        "Dice's Coefficient"
+        "Dice's Coefficient",
+        "Cosine",
+        "Jaccard Index",
+        "Levenshtein",
+        "Longest Common Subsequence",
+        "Metric Longest Common Subsequence",
+        "difference",
+        "compare",
+        "comparision",
+        "similar",
+        "distance",
+        "match",
+        "sort match"
     ],
     "author": {
         "name": "Rabbitzzc",
@@ -28,6 +41,7 @@
         "@babel/node": "^7.6.3",
         "@babel/preset-env": "^7.6.3",
         "async": "^3.1.0",
+        "babel-preset-minify": "^0.5.1",
         "mocha": "^6.2.1",
         "npm-run-all": "^4.1.5"
     }
