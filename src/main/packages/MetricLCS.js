@@ -1,9 +1,10 @@
 const Similarity = require('../interface/Similarity')
 
-module.exports = class LongestCommonSubsequence extends Similarity {
+module.exports = class MetricLCS extends Similarity {
     constructor() {
         super()
     }
+
     similarity(thanos, rival) {
         Similarity.checkThanosType(thanos)
         Similarity.checkRivalType(rival)
@@ -15,14 +16,18 @@ module.exports = class LongestCommonSubsequence extends Similarity {
         if (!thanos.length && !rival.length) return 1
         if (thanos === rival) return 1
 
-        return (2.0 * LongestCommonSubsequence.lcsLength(thanos, rival)) / (thanos.length + rival.length)
+        return (1.0 * MetricLCS.lcsLength(thanos, rival)) / Math.max(thanos.length, rival.length)
     }
 
     distance(thanos, rival) {
-        return thanos.length + rival.length - 2 * LongestCommonSubsequence.lcsLength(thanos, rival)
+        Similarity.checkThanosType(thanos)
+        Similarity.checkRivalType(rival)
+
+        if (thanos === rival) return 0
+
+        return 1.0 - this.similarity(thanos, rival)
     }
 
-    // Return the length of Longest Common Subsequence (LCS) between strings thanos and rival
     static lcsLength(thanos, rival) {
         Similarity.checkThanosType(thanos)
         Similarity.checkRivalType(rival)

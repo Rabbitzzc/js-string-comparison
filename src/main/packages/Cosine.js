@@ -5,11 +5,14 @@ module.exports = class Cosine extends Similarity {
     constructor() {
         super()
     }
-    compareTwoStrings(thanos, rival) {
+    similarity(thanos, rival) {
+        Similarity.checkThanosType(thanos)
+        Similarity.checkRivalType(rival)
 
         // clear white space characters & to low
-        [thanos, rival] = super.initParams(thanos, rival)
-
+        thanos = Similarity.initParams(thanos, rival)[0]
+        rival = Similarity.initParams(thanos, rival)[1]
+        
         if (!thanos.length && !rival.length) return 1
         if (!thanos.length || !rival.length) return 0
         if (thanos === rival) return 1
@@ -29,17 +32,10 @@ module.exports = class Cosine extends Similarity {
         mThanos = Math.sqrt(mThanos)
         mRival = Math.sqrt(mRival)
         return (1.0 * dotproduct) / (mThanos * mRival)
-
     }
-
-    findBestmThanostch(thanos, avengers) {
-        try {
-            super.checkParamType(thanos, avengers)
-
-
-        } catch (error) {
-            console.log(error)
-        }
+    
+    distance(thanos, rival) {
+        return 1.0 - this.similarity(thanos, rival)
     }
 
     // string vectorization

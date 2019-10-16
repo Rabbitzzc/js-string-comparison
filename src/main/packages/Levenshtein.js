@@ -1,6 +1,6 @@
 const Similarity = require('../interface/Similarity')
 
-module.exports = class LongestCommonSubsequence extends Similarity {
+module.exports = class Levenshtein extends Similarity {
     constructor() {
         super()
     }
@@ -8,39 +8,53 @@ module.exports = class LongestCommonSubsequence extends Similarity {
         Similarity.checkThanosType(thanos)
         Similarity.checkRivalType(rival)
 
-        // clear white space characters & to low
         thanos = Similarity.initParams(thanos, rival)[0]
         rival = Similarity.initParams(thanos, rival)[1]
 
         if (!thanos.length && !rival.length) return 1
-        if (thanos === rival) return 1
 
-        return (2.0 * LongestCommonSubsequence.lcsLength(thanos, rival)) / (thanos.length + rival.length)
+        return 1 - (1.0 * this.distance(thanos, rival)) / Math.max(thanos.length, rival.length)
     }
 
+    // edit distance
     distance(thanos, rival) {
-        return thanos.length + rival.length - 2 * LongestCommonSubsequence.lcsLength(thanos, rival)
-    }
-
-    // Return the length of Longest Common Subsequence (LCS) between strings thanos and rival
-    static lcsLength(thanos, rival) {
         Similarity.checkThanosType(thanos)
         Similarity.checkRivalType(rival)
 
         thanos = Similarity.initParams(thanos, rival)[0]
         rival = Similarity.initParams(thanos, rival)[1]
 
-        // init array elements=0
+        if (thanos === rival) return 0
+
         let [len1, len2] = [thanos.length, rival.length]
+        if (!len1) return len2
+        if (!len2) return len1
+
+        // init array
         let dynamicArray = [...Array(len1 + 1)].map(() => Array(len2 + 1).fill(0))
 
+        for (let i = 0; i <= len1; ++i) {
+            dynamicArray[i][0] = i
+        }
+        for (let j = 0; j <= len2; ++j) {
+            dynamicArray[0][j] = j
+        }
+        let temp
         for (let i = 1; i <= len1; ++i) {
             for (let j = 1; j <= len2; ++j) {
-                dynamicArray[i][j] = thanos[i - 1] === rival[j - 1] ?
-                    (dynamicArray[i - 1][j - 1] + 1) :
-                    (Math.max(dynamicArray[i][j - 1], dynamicArray[i - 1][j]))
+                temp = thanos[i - 1] === rival[j - 1] ? 0 : 1
+
+                // delete  insert  replace
+                dynamicArray[i][j] = Math.min(dynamicArray[i - 1][j] + 1, dynamicArray[i][j - 1] + 1, dynamicArray[i - 1][j - 1] + temp)
             }
         }
+
         return dynamicArray[len1][len2]
     }
 }
+
+// let ls = new Levenshtein()
+
+// let a = 'healed'
+// let b = ['mailed', 'edward', 'sealed', 'theatre']
+// console.log(ls.sortMatch(a, b))

@@ -1,14 +1,16 @@
 const Similarity = require('../interface/Similarity')
 
-
 module.exports = class JaccardIndex extends Similarity {
     constructor() {
         super()
     }
-    compareTwoStrings(thanos, rival) {
+    similarity(thanos, rival) {
+        Similarity.checkThanosType(thanos)
+        Similarity.checkRivalType(rival)
 
         // clear white space characters & to low
-        [thanos, rival] = super.initParams(thanos, rival)
+        thanos = Similarity.initParams(thanos, rival)[0]
+        rival = Similarity.initParams(thanos, rival)[1]
 
         if (!thanos.length && !rival.length) return 1
         if (thanos === rival) return 1
@@ -20,13 +22,7 @@ module.exports = class JaccardIndex extends Similarity {
         return (1.0 * intersection.size) / union.size
     }
 
-    findBestMatch(thanos, avengers) {
-        try {
-            super.checkParamType(thanos, avengers)
-
-
-        } catch (error) {
-            console.log(error)
-        }
+    distance(thanos, rival) {
+        return 1.0 - this.similarity(thanos, rival)
     }
 }

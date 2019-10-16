@@ -1,15 +1,16 @@
-// import Similarity from '../interface/Similarity.js'
-
 const Similarity = require('../interface/Similarity')
 
 module.exports = class DiceCoefficient extends Similarity {
     constructor() {
         super()
     }
-    compareTwoStrings(thanos, rival) {
+    similarity(thanos, rival) {
+        Similarity.checkThanosType(thanos)
+        Similarity.checkRivalType(rival)
 
         // clear white space characters & to low
-        [thanos, rival] = super.initParams(thanos, rival)
+        thanos = Similarity.initParams(thanos, rival)[0]
+        rival = Similarity.initParams(thanos, rival)[1]
 
         let [length1, length2] = [thanos.length, rival.length]
 
@@ -41,13 +42,7 @@ module.exports = class DiceCoefficient extends Similarity {
         return (2.0 * intersectionSize) / (length1 + length2 - 2)
     }
 
-    findBestMatch(thanos, avengers) {
-        try {
-            super.checkParamType(thanos, avengers)
-
-
-        } catch (error) {
-            console.log(error)
-        }
+    distance(thanos, rival) {
+        return 1.0 - this.similarity(thanos, rival)
     }
 }
