@@ -1,13 +1,13 @@
 const assert = require('assert')
-const Cosine = require('../src/main/packages/Cosine')
-const cosine = new Cosine()
+const MetricLCS = require('../src/main/packages/MetricLCS')
+const metricLCS = new MetricLCS()
 
-describe('test Cosine Similarity', () => {
+describe('test MetricLCS', () => {
     describe('similarity()', () => {
         const testData = [{
                 first: 'french',
                 second: 'quebec',
-                expected: 0.3651483716701107
+                expected: 0.3333333333333333
             },
             {
                 first: 'france',
@@ -17,12 +17,12 @@ describe('test Cosine Similarity', () => {
             {
                 first: 'healed',
                 second: 'sealed',
-                expected: 0.7999999999999998
+                expected: 0.8333333333333334
             },
             {
                 first: 'web applications',
                 second: 'applications of the web',
-                expected: 0.9258200997725515
+                expected: 0.6
             },
             {
                 first: 'a',
@@ -57,12 +57,12 @@ describe('test Cosine Similarity', () => {
             {
                 first: 'ab',
                 second: 'ba',
-                expected: 0.9999999999999998
+                expected: 0.5
             }
         ]
         testData.forEach(td => {
             it(`should be ${td.expected}`, () => {
-                assert.equal(cosine.similarity(td.first, td.second), td.expected)
+                assert.equal(metricLCS.similarity(td.first, td.second), td.expected)
             })
         })
     })

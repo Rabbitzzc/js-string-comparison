@@ -1,15 +1,19 @@
-## string-comparison
-一个实现不同字符串相似度和距离度量的 JavaScript 库，基于 [java-string-similarity](https://github.com/tdebatty/java-string-similarity) 的JavaScript 实现。
+# string-comparison
 
-compareSimilarity
-### Usage
+**JavaScript implementation of [tdebatty/java-string-similarity](https://github.com/tdebatty/java-string-similarity)**
 
-安装
+A library implementing different string similarity, distance and sortMatch measures. A dozen of algorithms (including Levenshtein edit distance and sibblings, Jaro-Winkler, Longest Common Subsequence, cosine similarity etc.) are currently implemented. Check the summary table below for the complete list...
+
+## Download & Usage
+
+download
+
 ```shell
 npm install string-comparision --save
 yarn add string-comparision
 ```
-代码中使用
+usage
+
 ```js
 let stringComparision = require('string-comparision')
 
@@ -17,34 +21,67 @@ const Thanos = 'healed'
 const Rival = 'sealed'
 const Avengers = ['edward', 'sealed', 'theatre']
 
-let 
 ```
 
-### Algorithm OverViews
+## OverViews
+The main characteristics of each implemented algorithm are presented below. The "cost" column gives an estimation of the computational cost to compute the similarity between two strings of length m and n respectively.
 
-下面介绍了每种已实现算法的主要特征。 “const”列给出了计算成本的估算值，以分别计算长度为m和n的两个字符串之间的相似度。
+|                                                              | Measure(s)                               | Normalized? | Metric? | Type    | Cost   | Typical usage   |
+| ------------------------------------------------------------ | --------------------------------------- | ----------- | ------- | ------- | ------ | --------------- |
+| [Jaccard index](https://github.com/luozhouyang/python-string-similarity/blob/master/README.md#jaccard-index) | similarity<br/>distance<br />sortMatch  | Yes         | Yes     | Set     | O(m+n) |                 |
+| [Cosine similarity](https://github.com/luozhouyang/python-string-similarity/blob/master/README.md#cosine-similarity) | similarity<br/>distance<br />sortMatch  | Yes         | No      | Profile | O(m+n) |                 |
+| [Sorensen-Dice coefficient](https://github.com/luozhouyang/python-string-similarity/blob/master/README.md#sorensen-dice-coefficient) | similarity<br/>distance<br />sortMatch  | Yes         | No      | Set     | O(m+n) |                 |
+| [Levenshtein](https://github.com/luozhouyang/python-string-similarity/blob/master/README.md#levenshtein) | similarity<br />distance<br />sortMatch | No          | Yes     |         | O(m*n) |                 |
+| [Jaro-Winkler](https://github.com/luozhouyang/python-string-similarity/blob/master/README.md#jaro-winkler) | similarity distance<br />sortMatch      | Yes         | No      |         | O(m*n) | typo correction |
 
-### API
-`string-comparision` 提供多个API，包括字符串比较的不同算法API，还有每种算法中，存在一个最佳匹配 API。
 
-#### API1
+
+## API
+* `similarity`.
+* `distance`.
+* `sortMatch`
+
+### `similarity`
 
 介绍
 
-##### 参数
-1. x
-2. x
+#### 参数
 
-##### 返回
+1. thanos [String]
+2. rival [String]
 
-##### Examples
+#### 返回
 
-### 发行说明 Release Notes
+### `distance`
 
-#### 1.0 版本
-* ddd
-* ddd
+介绍
 
-#### 2.0 版本
-* xxx
-* xxx
+#### 参数
+
+1. thanos [String]
+2. rival [String]
+
+#### 返回
+
+### `sortMatch`
+
+介绍
+
+#### 参数
+
+1. thanos [String]
+2. avengers [...String]
+
+#### 返回
+
+## Release Notes
+
+### 1.0 version
+* Basic building
+
+### 2.0 version
+* none
+
+
+## MIT
+[MIT](#)
