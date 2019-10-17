@@ -6,7 +6,7 @@
             {
                 "builtIns": false,
                 "evaluate": false,
-                "mangle": false
+                "mangle": true
             }
         ]
     ],
