@@ -1,12 +1,12 @@
 {
     "name": "string-comparison",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "A library implementing different string similarity",
-    "main": "./src/index.js",
+    "main": "./lib/index.js",
     "scripts": {
         "test": "node ./node_modules/mocha/bin/mocha",
         "lint": "eslint src",
-        "build": "./node_modules/.bin/babel src  --out-dir lib"
+        "build": "./node_modules/.bin/babel src --out-dir lib"
     },
     "repository": {
         "type": "git",
