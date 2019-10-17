@@ -1,6 +1,6 @@
 {
     "name": "string-comparison",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "A library implementing different string similarity",
     "main": "./lib/index.js",
     "scripts": {
