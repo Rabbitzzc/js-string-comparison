@@ -5,7 +5,6 @@
 
 A library implementing different string similarity, distance and sortMatch measures. A dozen of algorithms (including Levenshtein edit distance and sibblings, Longest Common Subsequence, cosine similarity etc.) are currently implemented. Check the summary table below for the complete list...
 
-- [string-comparison](#string-comparison)
   - [Download & Usage](#download--usage)
   - [OverView](#overview)
   - [Normalized, metric, similarity and distance](#normalized-metric-similarity-and-distance)
@@ -30,6 +29,7 @@ A library implementing different string similarity, distance and sortMatch measu
   - [Release Notes](#release-notes)
     - [1.x version](#1x-version)
   - [MIT](#mit)
+
 
 ## Download & Usage
 
@@ -219,24 +219,9 @@ Return a number
 #### params
 
 1. thanos [String]
-2. avengers [Array]
-
-#### return
-Return an array of objects
-```js
-[
-  { member: 'edward', index: 0, rating: 0.5 },
-  { member: 'theatre', index: 2, rating: 0.6153846153846154 },
-  { member: 'sealed', index: 1, rating: 0.8333333333333334 }
-]
-```
-
-#### Params
-
-1. thanos [String]
 2. avengers [...String]
 
-#### Return
+#### return
 
 Return an array of objects. ex:
 ```js
