@@ -5,7 +5,31 @@
 
 A library implementing different string similarity, distance and sortMatch measures. A dozen of algorithms (including Levenshtein edit distance and sibblings, Longest Common Subsequence, cosine similarity etc.) are currently implemented. Check the summary table below for the complete list...
 
-[TOC]
+- [string-comparison](#string-comparison)
+  - [Download & Usage](#download--usage)
+  - [OverView](#overview)
+  - [Normalized, metric, similarity and distance](#normalized-metric-similarity-and-distance)
+    - [(Normalized) similarity and distance](#normalized-similarity-and-distance)
+  - [Levenshtein](#levenshtein)
+  - [Longest Common Subsequence](#longest-common-subsequence)
+  - [Metric Longest Common Subsequence](#metric-longest-common-subsequence)
+  - [Cosine similarity](#cosine-similarity)
+  - [Sorensen-Dice coefficient](#sorensen-dice-coefficient)
+  - [API](#api)
+    - [similarity](#similarity)
+      - [params](#params)
+      - [return](#return)
+    - [distance](#distance)
+      - [params](#params-1)
+      - [return](#return-1)
+    - [sortMatch](#sortmatch)
+      - [params](#params-2)
+      - [return](#return-2)
+      - [Params](#params)
+      - [Return](#return)
+  - [Release Notes](#release-notes)
+    - [1.x version](#1x-version)
+  - [MIT](#mit)
 
 ## Download & Usage
 
@@ -33,7 +57,8 @@ console.log(cos.sortMatch(Thanos, Avengers))
 
 ```
 
-## OverViews
+## OverView
+
 The main characteristics of each implemented algorithm are presented below. The "cost" column gives an estimation of the computational cost to compute the similarity between two strings of length m and n respectively.
 
 |                                                                                                                                      | Measure(s)                              | Normalized? | Metric? | Type    | Cost   | Typical usage   |
@@ -45,6 +70,7 @@ The main characteristics of each implemented algorithm are presented below. The 
 | [Jaro-Winkler](https://github.com/luozhouyang/python-string-similarity/blob/master/README.md#jaro-winkler)                           | similarity distance<br />sortMatch      | Yes         | No      |         | O(m*n) | typo correction |
 
 ## Normalized, metric, similarity and distance
+
 Although the topic might seem simple, a lot of different algorithms exist to measure text similarity or distance. Therefore the library defines some interfaces to categorize them.
 
 ### (Normalized) similarity and distance
@@ -118,6 +144,7 @@ console.log(lcs.sortMatch(Thanos, Avengers))
 ```
 
 ## Metric Longest Common Subsequence
+
 Distance metric based on Longest Common Subsequence, from the notes "An LCS-based string metric" by Daniel Bakkelund.
 http://heim.ifi.uio.no/~danielry/StringMetric.pdf
 
@@ -142,6 +169,7 @@ console.log(mlcs.sortMatch(Thanos, Avengers))
   { member: 'sealed', index: 1, rating: 0.8333333333333334 }
 ]
 ```
+
 ## Cosine similarity
 
 Like Q-Gram distance, the input strings are first converted into sets of n-grams (sequences of n characters, also called k-shingles), but this time the cardinality of each n-gram is not taken into account. Each input string is simply a set of n-grams. The Jaccard index is then computed as |V1 inter V2| / |V1 union V2|.
@@ -150,45 +178,58 @@ Distance is computed as 1 - similarity.
 Jaccard index is a metric distance.
 
 ## Sorensen-Dice coefficient
+
 Similar to Jaccard index, but this time the similarity is computed as 2 * |V1 inter V2| / (|V1| + |V2|).
 
 Distance is computed as 1 - similarity.
-
 
 ## API
 * `similarity`.
 * `distance`.
 * `sortMatch`
 
-### `similarity`
+### similarity
 
 Implementing algorithms define a similarity between strings
 
-#### Params
+#### params
 
 1. thanos [String]
 2. rival [String]
 
-#### Return
+#### return
 
 Return a similarity between 0.0 and 1.0
 
-### `distance`
+### distance
 
 Implementing algorithms define a distance between strings (0 means strings are identical)
 
-#### Params
+#### params
 
 1. thanos [String]
 2. rival [String]
 
-#### Return
+#### return
 
 Return a number
 
-### `sortMatch`
+### sortMatch
 
-介绍
+#### params
+
+1. thanos [String]
+2. avengers [Array]
+
+#### return
+Return an array of objects
+```js
+[
+  { member: 'edward', index: 0, rating: 0.5 },
+  { member: 'theatre', index: 2, rating: 0.6153846153846154 },
+  { member: 'sealed', index: 1, rating: 0.8333333333333334 }
+]
+```
 
 #### Params
 
@@ -218,8 +259,6 @@ Return an array of objects. ex:
 * LongestCommonSubsequence
 * MetricLCS
 * Add function sortMatch()
-
-
 
 
 ## MIT
