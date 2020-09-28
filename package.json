@@ -12,6 +12,9 @@
         "type": "git",
         "url": "https://github.com/Rabbitzzc/js-string-comparision"
     },
+    "files": [
+        "lib"
+    ],
     "keywords": [
         "strings",
         "compare similarity",
