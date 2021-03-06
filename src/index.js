@@ -1,12 +1,9 @@
-const  Sim = ['Cosine', 'DiceCoefficient', 'JaccardIndex', 'Levenshtein', 'LongestCommonSubsequence', 'MetricLCS']
-const [
-    Cosine,
-    DiceCoefficient,
-    JaccardIndex,
-    Levenshtein,
-    LongestCommonSubsequence,
-    MetricLCS
-] = Sim.map(v => require(`./main/packages/${v}`))
+const Cosine = require('./main/packages/Cosine')
+const DiceCoefficient = require('./main/packages/DiceCoefficient')
+const JaccardIndex = require('./main/packages/JaccardIndex')
+const Levenshtein = require('./main/packages/Levenshtein')
+const LongestCommonSubsequence = require('./main/packages/LongestCommonSubsequence')
+const MetricLCS = require('./main/packages/MetricLCS')
 
 module.exports = {
     cosine: new Cosine(),
