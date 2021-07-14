@@ -48,8 +48,8 @@ const Thanos = 'healed'
 const Rival = 'sealed'
 const Avengers = ['edward', 'sealed', 'theatre']
 
-use by Consine
-let cos = stringComparison.consine
+// use by cosine
+let cos = stringComparison.cosine
 
 console.log(cos.similarity(Thanos, Rival))
 console.log(cos.distance(Thanos, Rival))
