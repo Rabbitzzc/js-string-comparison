@@ -36,20 +36,20 @@ A library implementing different string similarity, distance and sortMatch measu
 download
 
 ```shell
-npm install string-comparision --save
-yarn add string-comparision
+npm install string-comparison --save
+yarn add string-comparison
 ```
 usage
 
 ```js
-let stringComparision = require('string-comparision')
+let stringComparison = require('string-comparison')
 
 const Thanos = 'healed'
 const Rival = 'sealed'
 const Avengers = ['edward', 'sealed', 'theatre']
 
 use by Consine
-let cos = stringComparision.consine
+let cos = stringComparison.consine
 
 console.log(cos.similarity(Thanos, Rival))
 console.log(cos.distance(Thanos, Rival))
