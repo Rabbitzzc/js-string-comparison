@@ -233,17 +233,8 @@ Return an array of objects. ex:
 ]
 ```
 
-## Release Notes
-
-### 1.x version
-* Basic building
-* Cosine
-* DiceCoefficient
-* JaccardIndex
-* Levenshtein
-* LongestCommonSubsequence
-* MetricLCS
-* Add function sortMatch()
+## CHANGLIG
+[CHANGLIG](./CHANGLIG.md)
 
 
 ## MIT
