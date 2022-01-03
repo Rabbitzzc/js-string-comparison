@@ -233,8 +233,8 @@ Return an array of objects. ex:
 ]
 ```
 
-## CHANGLIG
-[CHANGLIG](./CHANGLIG.md)
+## CHANGLOG
+[CHANGLOG](./CHANGLOG.md)
 
 
 ## MIT
