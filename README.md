@@ -1,5 +1,9 @@
 
 # string-comparison
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/string-comparison)
+![npm](https://img.shields.io/npm/dm/string-comparison)
+[![GitHub stars](https://img.shields.io/github/stars/Rabbitzzc/js-string-comparison)](https://github.com/Rabbitzzc/js-string-comparison/stargazers)
+[![GitHub license](https://img.shields.io/github/license/Rabbitzzc/js-string-comparison)](https://github.com/Rabbitzzc/js-string-comparison/blob/master/LICENCE)
 
 **JavaScript implementation of [tdebatty/java-string-similarity](https://github.com/tdebatty/java-string-similarity)**
 
