@@ -30,8 +30,6 @@ A library implementing different string similarity, distance and sortMatch measu
       - [return](#return-2)
       - [Params](#params)
       - [Return](#return)
-  - [Release Notes](#release-notes)
-    - [1.x version](#1x-version)
   - [MIT](#mit)
 
 
