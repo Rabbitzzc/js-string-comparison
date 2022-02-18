@@ -1,6 +1,7 @@
 ## Release Notes
 
 ### 1.1.0
+* Feature: Support import&require
 * Optimize: JS to Ts
 * Optimize: babel to tsup
 
