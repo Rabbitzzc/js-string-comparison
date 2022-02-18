@@ -1,19 +1,23 @@
 {
     "name": "string-comparison",
-    "version": "1.0.9",
+    "version": "1.1.0",
     "description": "A library implementing different string similarity",
-    "main": "./lib/index.js",
+    "main": "dist/index.js",
+    "module": "dist/index.mjs",
+    "types": "dist/index.d.ts",
     "scripts": {
-        "test": "node ./node_modules/mocha/bin/mocha",
+        "test": "mocha",
         "lint": "eslint src",
-        "build": "./node_modules/.bin/babel src --out-dir lib"
+        "build-fast": "tsup src/index.ts --dts --format cjs,esm --minify",
+        "build": "yarn build-fast",
+        "watch": "tsup src/index.ts --watch"
     },
     "repository": {
         "type": "git",
         "url": "https://github.com/Rabbitzzc/js-string-comparision"
     },
     "files": [
-        "lib"
+        "dist"
     ],
     "keywords": [
         "strings",
@@ -39,13 +43,17 @@
     },
     "license": "MIT",
     "devDependencies": {
-        "@babel/cli": "^7.6.4",
-        "@babel/core": "^7.6.4",
-        "@babel/node": "^7.6.3",
-        "@babel/preset-env": "^7.6.3",
+        "@types/mocha": "^9.1.0",
+        "@types/node": "^17.0.18",
+        "@typescript-eslint/eslint-plugin": "^5.12.0",
+        "@typescript-eslint/parser": "^5.12.0",
         "async": "^3.1.0",
-        "babel-preset-minify": "^0.5.1",
+        "eslint": "^8.9.0",
+        "eslint-config-alloy": "^4.5.1",
         "mocha": "^6.2.1",
-        "npm-run-all": "^4.1.5"
+        "npm-run-all": "^4.1.5",
+        "ts-node": "^10.5.0",
+        "tsup": "^5.11.13",
+        "typescript": "^4.5.5"
     }
 }

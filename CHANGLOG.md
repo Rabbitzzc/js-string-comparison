@@ -1,5 +1,10 @@
 ## Release Notes
 
+### 1.1.0
+* Optimize: JS to Ts
+* Optimize: babel to tsup
+
+
 ### 1.0.9
 * Feature: Basic building
 * Feature: Cosine

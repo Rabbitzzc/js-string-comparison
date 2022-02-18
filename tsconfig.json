@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "umd",
+        "moduleResolution": "Node",
+        "declaration": true,
+        "declarationDir": "dist/types",
+        "outDir": "./dist",
+        "lib": [
+            "es6",
+            "es7",
+            "DOM"
+        ],
+    },
+    "include": [
+        "src/**/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "dist",
+        "lib"
+    ]
+}
