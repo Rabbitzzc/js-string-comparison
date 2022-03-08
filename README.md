@@ -45,6 +45,7 @@ usage
 
 ```js
 let stringComparison = require('string-comparison')
+// or import stringComparison frrom 'string-comparison'
 
 const Thanos = 'healed'
 const Rival = 'sealed'
