@@ -1,8 +1,6 @@
 import Similarity from "../interface/Similarity";
 
 export default class Cosine extends Similarity {
-  // string vectorization
-
   public static similarity(pThanos: string, pRival: string): number {
     // clear white space characters & to low
     const [thanos, rival] = Similarity.initParams(pThanos, pRival);
@@ -11,7 +9,6 @@ export default class Cosine extends Similarity {
     if (!thanos.length || !rival.length) return 0;
     if (thanos === rival) return 1;
 
-    // string vectorization
     let common = Array.from(new Set(thanos.split("").concat(rival.split(""))));
 
     let vectorThanos = this.stringVectorization(thanos.split(""), common);
@@ -32,6 +29,7 @@ export default class Cosine extends Similarity {
     return 1.0 - Cosine.similarity(thanos, rival);
   }
 
+  // string vectorization
   private static stringVectorization(strArr: string[], common: string[]) {
     return common.map((v) => (strArr.includes(v) ? 1 : 0));
   }

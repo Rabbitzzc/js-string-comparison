@@ -46,14 +46,14 @@ usage
 
 ```js
 let stringComparison = require('string-comparison')
-// or import stringComparison frrom 'string-comparison'
+// or import stringComparison from 'string-comparison'
 
 const Thanos = 'healed'
 const Rival = 'sealed'
 const Avengers = ['edward', 'sealed', 'theatre']
 
 // use by cosine
-let cos = stringComparison.cosine
+let cos = stringComparison.Cosine
 
 console.log(cos.similarity(Thanos, Rival))
 console.log(cos.distance(Thanos, Rival))
@@ -91,14 +91,15 @@ The Levenshtein distance between two words is the minimum number of single-chara
 It is a metric string distance. This implementation uses dynamic programming (Wagner–Fischer algorithm), with only 2 rows of data. The space requirement is thus O(m) and the algorithm runs in O(m.n).
 
 ```js
+import { Levenshtein } from "string-comparison"
+
 const Thanos = 'healed'
 const Rival = 'sealed'
 const Avengers = ['edward', 'sealed', 'theatre']
-let ls = Similarity.levenshtein
 
-console.log(ls.similarity(Thanos, Rival))
-console.log(ls.distance(Thanos, Rival))
-console.log(ls.sortMatch(Thanos, Avengers))
+console.log(Levenshtein.similarity(Thanos, Rival))
+console.log(Levenshtein.distance(Thanos, Rival))
+console.log(Levenshtein.sortMatch(Thanos, Avengers))
 
 // output
 0.8333333333333334
@@ -128,14 +129,15 @@ This class implements the dynamic programming approach, which has a space requir
 In "Length of Maximal Common Subsequences", K.S. Larsen proposed an algorithm that computes the length of LCS in time O(log(m).log(n)). But the algorithm has a memory requirement O(m.n²) and was thus not implemented here.
 
 ```js
+import { LongestCommonSubsequence } from "string-comparison"
+
 const Thanos = 'healed'
 const Rival = 'sealed'
 const Avengers = ['edward', 'sealed', 'theatre']
-let lcs = Similarity.lcs
 
-console.log(lcs.similarity(Thanos, Rival))
-console.log(lcs.distance(Thanos, Rival))
-console.log(lcs.sortMatch(Thanos, Avengers))
+console.log(LongestCommonSubsequence.similarity(Thanos, Rival))
+console.log(LongestCommonSubsequence.distance(Thanos, Rival))
+console.log(LongestCommonSubsequence.sortMatch(Thanos, Avengers))
 
 // output
 0.8333333333333334
@@ -155,14 +157,15 @@ http://heim.ifi.uio.no/~danielry/StringMetric.pdf
 The distance is computed as 1 - |LCS(s1, s2)| / max(|s1|, |s2|)
 
 ```js
+import { MetricLCS } from "string-comparison"
+
 const Thanos = 'healed'
 const Rival = 'sealed'
 const Avengers = ['edward', 'sealed', 'theatre']
-let mlcs = Similarity.mlcs
 
-console.log(mlcs.similarity(Thanos, Rival))
-console.log(mlcs.distance(Thanos, Rival))
-console.log(mlcs.sortMatch(Thanos, Avengers))
+console.log(MetricLCS.similarity(Thanos, Rival))
+console.log(MetricLCS.distance(Thanos, Rival))
+console.log(MetricLCS.sortMatch(Thanos, Avengers))
 
 // output
 0.8333333333333334
@@ -181,11 +184,19 @@ Like Q-Gram distance, the input strings are first converted into sets of n-grams
 Distance is computed as 1 - similarity.
 Jaccard index is a metric distance.
 
+```js
+import { Cosine } from "string-comparison"
+```
+
 ## Sorensen-Dice coefficient
 
 Similar to Jaccard index, but this time the similarity is computed as 2 * |V1 inter V2| / (|V1| + |V2|).
 
 Distance is computed as 1 - similarity.
+
+```js
+import { DiceCoefficient } from "string-comparison"
+```
 
 ## API
 * `similarity`.
