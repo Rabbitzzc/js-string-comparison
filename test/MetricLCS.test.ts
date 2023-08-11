@@ -1,6 +1,5 @@
-const assert = require('assert');
-import MetricLCS from '../src/core/packages/MetricLCS';
-const metricLCS = new MetricLCS();
+import * as assert from 'assert';
+import { MetricLCS } from '../src';
 
 describe('test MetricLCS', () => {
 	describe('similarity()', () => {
@@ -63,7 +62,7 @@ describe('test MetricLCS', () => {
 		];
 		testData.forEach((td) => {
 			it(`should be ${td.expected}`, () => {
-				assert.equal(metricLCS.similarity(td.first, td.second), td.expected);
+				assert.equal(MetricLCS.similarity(td.first, td.second), td.expected);
 			});
 		});
 	});

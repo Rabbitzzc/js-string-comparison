@@ -1,6 +1,5 @@
-const assert = require('assert');
-import Cosine from '../src/core/packages/Cosine';
-const cosine = new Cosine();
+import * as assert from 'assert';
+import { Cosine } from '../src';
 
 describe('test Cosine Similarity', () => {
 	describe('similarity()', () => {
@@ -63,7 +62,7 @@ describe('test Cosine Similarity', () => {
 		];
 		testData.forEach((td) => {
 			it(`should be ${td.expected}`, () => {
-				assert.equal(cosine.similarity(td.first, td.second), td.expected);
+				assert.equal(Cosine.similarity(td.first, td.second), td.expected);
 			});
 		});
 	});

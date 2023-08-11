@@ -1,6 +1,5 @@
-const assert = require('assert');
-import DiceCoefficient from '../src/core/packages/DiceCoefficient';
-const dice = new DiceCoefficient();
+import * as assert from 'assert';
+import { DiceCoefficient } from '../src';
 
 describe('test DiceCoefficient', () => {
 	describe('similarity()', () => {
@@ -63,7 +62,7 @@ describe('test DiceCoefficient', () => {
 		];
 		testData.forEach((td) => {
 			it(`should be ${td.expected}`, () => {
-				assert.equal(dice.similarity(td.first, td.second), td.expected);
+				assert.equal(DiceCoefficient.similarity(td.first, td.second), td.expected);
 			});
 		});
 	});

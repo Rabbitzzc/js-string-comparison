@@ -1,6 +1,5 @@
-const assert = require('assert');
-import JaccardIndex from '../src/core/packages/JaccardIndex';
-const jaccard = new JaccardIndex();
+import * as assert from 'assert';
+import { JaccardIndex } from '../src';
 
 describe('test JaccardIndex', () => {
 	describe('similarity()', () => {
@@ -63,7 +62,7 @@ describe('test JaccardIndex', () => {
 		];
 		testData.forEach((td) => {
 			it(`should be ${td.expected}`, () => {
-				assert.equal(jaccard.similarity(td.first, td.second), td.expected);
+				assert.equal(JaccardIndex.similarity(td.first, td.second), td.expected);
 			});
 		});
 	});
