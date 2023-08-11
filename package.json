@@ -43,17 +43,17 @@
     },
     "license": "MIT",
     "devDependencies": {
-        "@types/mocha": "^9.1.0",
-        "@types/node": "^17.0.18",
-        "@typescript-eslint/eslint-plugin": "^5.12.0",
-        "@typescript-eslint/parser": "^5.12.0",
-        "async": "^3.1.0",
-        "eslint": "^8.9.0",
-        "eslint-config-alloy": "^4.5.1",
-        "mocha": "^6.2.1",
+        "@types/mocha": "^10.0.1",
+        "@types/node": "^20.4.9",
+        "@typescript-eslint/eslint-plugin": "^6.3.0",
+        "@typescript-eslint/parser": "^6.3.0",
+        "async": "^3.2.4",
+        "eslint": "^8.46.0",
+        "eslint-config-alloy": "^5.1.1",
+        "mocha": "^10.2.0",
         "npm-run-all": "^4.1.5",
-        "ts-node": "^10.5.0",
-        "tsup": "^5.11.13",
-        "typescript": "^4.5.5"
+        "ts-node": "^10.9.1",
+        "tsup": "^7.2.0",
+        "typescript": "^5.1.6"
     }
 }

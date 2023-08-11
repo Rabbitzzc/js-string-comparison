@@ -9,7 +9,8 @@
 
 A library implementing different string similarity, distance and sortMatch measures. A dozen of algorithms (including Levenshtein edit distance and sibblings, Longest Common Subsequence, cosine similarity etc.) are currently implemented. Check the summary table below for the complete list...
 
-  - [Download & Usage](#download--usage)
+- [string-comparison](#string-comparison)
+  - [Download \& Usage](#download--usage)
   - [OverView](#overview)
   - [Normalized, metric, similarity and distance](#normalized-metric-similarity-and-distance)
     - [(Normalized) similarity and distance](#normalized-similarity-and-distance)
@@ -28,8 +29,7 @@ A library implementing different string similarity, distance and sortMatch measu
     - [sortMatch](#sortmatch)
       - [params](#params-2)
       - [return](#return-2)
-      - [Params](#params)
-      - [Return](#return)
+  - [CHANGELOG](#changelog)
   - [MIT](#mit)
 
 
@@ -40,6 +40,7 @@ download
 ```shell
 npm install string-comparison --save
 yarn add string-comparison
+pnpm add string-comparison
 ```
 usage
 
@@ -236,9 +237,9 @@ Return an array of objects. ex:
 ]
 ```
 
-## CHANGLOG
-[CHANGLOG](./CHANGLOG.md)
+## CHANGELOG
+[CHANGELOG](./CHANGELOG.md)
 
 
 ## MIT
-[MIT](./LICENCE)
+[MIT](./LICENSE)
