@@ -15,7 +15,7 @@ export default class DiceCoefficient extends Similarity {
 
     // get the intersecting character, two strings as a group
     for (let i = 0; i < length1 - 1; i++) {
-      const bigram = thanos.substr(i, 2);
+      const bigram = thanos.slice(i, i + 2);
       const count = thanosBigrams.has(bigram)
         ? thanosBigrams.get(bigram) + 1
         : 1;
@@ -24,7 +24,7 @@ export default class DiceCoefficient extends Similarity {
     }
     let intersectionSize = 0;
     for (let i = 0; i < length2 - 1; i++) {
-      const bigram = rival.substr(i, 2);
+      const bigram = rival.slice(i, i + 2);
       const count = thanosBigrams.has(bigram) ? thanosBigrams.get(bigram) : 0;
 
       if (count > 0) {
