@@ -12,7 +12,10 @@ export default abstract class Similarity {
   /**
    * @description 寻找最佳匹配结果
    */
-  public static sortMatch(thanos: string, avengers: string[]): SimilarityResult[] {
+  public static sortMatch(
+    thanos: string,
+    avengers: string[],
+  ): SimilarityResult[] {
     return avengers
       .map((str, index) => {
         return {
@@ -24,14 +27,10 @@ export default abstract class Similarity {
       .sort((a, b) => a.rating - b.rating);
   }
 
-  
-  
   protected static initParams(thanos: string, rival: string): string[] {
     return [
       thanos.replace(/\s+/g, "").toLowerCase(),
       rival.replace(/\s+/g, "").toLowerCase(),
     ];
   }
-
-  
 }

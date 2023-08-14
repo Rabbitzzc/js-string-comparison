@@ -39,7 +39,7 @@ export default class Levenshtein extends Similarity {
         dynamicArray[i][j] = Math.min(
           dynamicArray[i - 1][j] + 1,
           dynamicArray[i][j - 1] + 1,
-          dynamicArray[i - 1][j - 1] + temp
+          dynamicArray[i - 1][j - 1] + temp,
         );
       }
     }

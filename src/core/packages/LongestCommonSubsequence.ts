@@ -2,7 +2,7 @@ import Similarity from "../interface/Similarity";
 
 export default class LongestCommonSubsequence extends Similarity {
   public static lcsLength(pThanos: string, pRival: string): number {
-	const [thanos, rival] = Similarity.initParams(pThanos, pRival);
+    const [thanos, rival] = Similarity.initParams(pThanos, pRival);
     // init array elements=0
     let [len1, len2] = [thanos.length, rival.length];
     let dynamicArray = [...Array(len1 + 1)].map(() => Array(len2 + 1).fill(0));

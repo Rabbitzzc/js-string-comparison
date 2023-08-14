@@ -10,7 +10,7 @@ export default class JaccardIndex extends Similarity {
     // split and Set
     let union = new Set(thanos.split("").concat(rival.split("")));
     let intersection = new Set(
-      thanos.split("").filter((v) => new Set(rival).has(v))
+      thanos.split("").filter((v) => new Set(rival).has(v)),
     );
 
     return Number(intersection.size) / union.size;
