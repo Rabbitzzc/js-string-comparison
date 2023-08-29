@@ -1,6 +1,5 @@
-const assert = require('assert');
-import Levenshtein from '../src/core/packages/Levenshtein';
-const levenshtein = new Levenshtein();
+import * as assert from 'assert';
+import { Levenshtein } from '../src';
 
 describe('test Levenshtein', () => {
 	describe('similarity()', () => {
@@ -63,7 +62,7 @@ describe('test Levenshtein', () => {
 		];
 		testData.forEach((td) => {
 			it(`should be ${td.expected}`, () => {
-				assert.equal(levenshtein.similarity(td.first, td.second), td.expected);
+				assert.equal(Levenshtein.similarity(td.first, td.second), td.expected);
 			});
 		});
 	});
