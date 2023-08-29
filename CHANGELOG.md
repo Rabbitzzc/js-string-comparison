@@ -1,5 +1,10 @@
 ## Release Notes
 
+### 1.2.0
+* Feature: longestCommonSubsequence = lcs
+* Feature: metricLcs = mlcs
+
+
 ### 1.1.0
 * Feature: Support import&require
 * Optimize: JS to Ts

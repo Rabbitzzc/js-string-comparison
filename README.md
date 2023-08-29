@@ -20,6 +20,7 @@ A library implementing different string similarity, distance and sortMatch measu
   - [Cosine similarity](#cosine-similarity)
   - [Sorensen-Dice coefficient](#sorensen-dice-coefficient)
   - [API](#api)
+  - [Methods](#methods)
     - [similarity](#similarity)
       - [params](#params)
       - [return](#return)
@@ -91,15 +92,16 @@ The Levenshtein distance between two words is the minimum number of single-chara
 It is a metric string distance. This implementation uses dynamic programming (Wagner–Fischer algorithm), with only 2 rows of data. The space requirement is thus O(m) and the algorithm runs in O(m.n).
 
 ```js
-import { Levenshtein } from "string-comparison"
+import { levenshtein } from "string-comparison"
+import type {SortMatchResultType} from "string-comparison"
 
 const Thanos = 'healed'
 const Rival = 'sealed'
 const Avengers = ['edward', 'sealed', 'theatre']
 
-console.log(Levenshtein.similarity(Thanos, Rival))
-console.log(Levenshtein.distance(Thanos, Rival))
-console.log(Levenshtein.sortMatch(Thanos, Avengers))
+console.log(levenshtein.similarity(Thanos, Rival))
+console.log(levenshtein.distance(Thanos, Rival))
+console.log(levenshtein.sortMatch(Thanos, Avengers) as SortMatchResultType)
 
 // output
 0.8333333333333334
@@ -129,15 +131,18 @@ This class implements the dynamic programming approach, which has a space requir
 In "Length of Maximal Common Subsequences", K.S. Larsen proposed an algorithm that computes the length of LCS in time O(log(m).log(n)). But the algorithm has a memory requirement O(m.n²) and was thus not implemented here.
 
 ```js
-import { LongestCommonSubsequence } from "string-comparison"
+import { longestCommonSubsequence } from "string-comparison"
+or 
+import { lcs } from "string-comparison"
+
 
 const Thanos = 'healed'
 const Rival = 'sealed'
 const Avengers = ['edward', 'sealed', 'theatre']
 
-console.log(LongestCommonSubsequence.similarity(Thanos, Rival))
-console.log(LongestCommonSubsequence.distance(Thanos, Rival))
-console.log(LongestCommonSubsequence.sortMatch(Thanos, Avengers))
+console.log(lcs.similarity(Thanos, Rival))
+console.log(lcs.distance(Thanos, Rival))
+console.log(lcs.sortMatch(Thanos, Avengers))
 
 // output
 0.8333333333333334
@@ -157,15 +162,17 @@ http://heim.ifi.uio.no/~danielry/StringMetric.pdf
 The distance is computed as 1 - |LCS(s1, s2)| / max(|s1|, |s2|)
 
 ```js
-import { MetricLCS } from "string-comparison"
+import { metricLcs } from "string-comparison"
+or 
+import { mlcs } from "string-comparison"
 
 const Thanos = 'healed'
 const Rival = 'sealed'
 const Avengers = ['edward', 'sealed', 'theatre']
 
-console.log(MetricLCS.similarity(Thanos, Rival))
-console.log(MetricLCS.distance(Thanos, Rival))
-console.log(MetricLCS.sortMatch(Thanos, Avengers))
+console.log(metricLcs.similarity(Thanos, Rival))
+console.log(metricLcs.distance(Thanos, Rival))
+console.log(metricLcs.sortMatch(Thanos, Avengers))
 
 // output
 0.8333333333333334
@@ -185,7 +192,7 @@ Distance is computed as 1 - similarity.
 Jaccard index is a metric distance.
 
 ```js
-import { Cosine } from "string-comparison"
+import { cosine } from "string-comparison"
 ```
 
 ## Sorensen-Dice coefficient
@@ -195,10 +202,18 @@ Similar to Jaccard index, but this time the similarity is computed as 2 * |V1 in
 Distance is computed as 1 - similarity.
 
 ```js
-import { DiceCoefficient } from "string-comparison"
+import { diceCoefficient } from "string-comparison"
 ```
 
 ## API
+* `cosine`
+* `diceCoefficient`
+* `jaccardIndex`
+* `levenshtein`
+* `lcs` = `longestCommonSubsequence`
+* `mlcs` = `metricLcs`
+
+## Methods
 * `similarity`.
 * `distance`.
 * `sortMatch`
@@ -222,8 +237,8 @@ Implementing algorithms define a distance between strings (0 means strings are i
 
 #### params
 
-1. thanos [String]
-2. rival [String]
+1. `thanos` [String]
+2. `rival` [String]
 
 #### return
 
@@ -238,7 +253,7 @@ Return a number
 
 #### return
 
-Return an array of objects. ex:
+Return an array of objects - `SortMatchResultType` ex:
 ```js
 [
   { member: 'edward', rating: 0.16666666666666663 },

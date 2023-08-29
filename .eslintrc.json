@@ -1,7 +1,7 @@
 {
   "parser": "@typescript-eslint/parser",
-  "extends": ["alloy", "alloy/typescript", "plugin:prettier/recommended"],
-  "plugins": ["@typescript-eslint", "prettier"],
+  "extends": ["alloy", "alloy/typescript"],
+  "plugins": ["@typescript-eslint"],
   "env": {
     "browser": true,
     "node": true,
@@ -32,6 +32,7 @@
         "checkLoops": false
       }
     ],
+    "semi": [2, "never"],
     "no-control-regex": "error",
     "no-debugger": "error",
     "no-dupe-args": "error",
