@@ -1,5 +1,8 @@
 ## Release Notes
 
+### 1.3.0
+* Feature: Support JaroWinkler
+
 ### 1.2.0
 * Feature: longestCommonSubsequence = lcs
 * Feature: metricLcs = mlcs
