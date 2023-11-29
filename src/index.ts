@@ -5,6 +5,7 @@ import JaccardIndex from './core/packages/JaccardIndex'
 import Levenshtein from './core/packages/Levenshtein'
 import LongestCommonSubsequence from './core/packages/LongestCommonSubsequence'
 import MetricLCS from './core/packages/MetricLCS'
+import JaroWinkler from './core/packages/JaroWinkler'
 
 export type { SortMatchResultType }
 
@@ -16,6 +17,7 @@ const lcs = new LongestCommonSubsequence()
 const longestCommonSubsequence = lcs
 const mlcs = new MetricLCS()
 const metricLcs = mlcs
+const jaroWinkler = new JaroWinkler()
 
 const output = {
   cosine,
@@ -26,6 +28,7 @@ const output = {
   longestCommonSubsequence,
   mlcs,
   metricLcs,
+  jaroWinkler,
 }
 
 export default output

@@ -19,6 +19,7 @@ A library implementing different string similarity, distance and sortMatch measu
   - [Metric Longest Common Subsequence](#metric-longest-common-subsequence)
   - [Cosine similarity](#cosine-similarity)
   - [Sorensen-Dice coefficient](#sorensen-dice-coefficient)
+  - [Jaro-Winkler similarity](#jaro-winkler-similarity)
   - [API](#api)
   - [Methods](#methods)
     - [similarity](#similarity)
@@ -205,13 +206,24 @@ Distance is computed as 1 - similarity.
 import { diceCoefficient } from "string-comparison"
 ```
 
+## Jaro-Winkler similarity
+
+The Jaro-Winkler similarity is a string metric measuring edit distance between two strings. Jaro – Winkler Similarity is much similar to Jaro Similarity. They both differ when the prefix of two string match. Jaro – Winkler Similarity uses a prefix scale ‘p’ which gives a more accurate answer when the strings have a common prefix up to a defined maximum length l. 
+
+```js
+import { jaroWinkler } from "string-comparison"
+```
+
 ## API
+
 * `cosine`
 * `diceCoefficient`
 * `jaccardIndex`
 * `levenshtein`
 * `lcs` = `longestCommonSubsequence`
 * `mlcs` = `metricLcs`
+* `jaroWinkler`
+
 
 ## Methods
 * `similarity`.
